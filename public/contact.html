@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/main-favicon.jpg" type="image/x-icon">
+    <title>ictechx — Contact</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">ictechx<span class="dot">.</span></div>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <nav class="nav" id="nav">
+            <div class="nav-content">
+                <span class="nav-title">NAVIGATION</span>
+                <button class="close-menu" id="close-menu">&times;</button>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="works.html">Works</a></li>
+                    <li><a href="index.html#team">Team</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <p>WELCOME TO ICTechX. A creative group of people who <strong>create</strong> influential brands and digital experiences.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+      <section class="contact-section">
+        <div class="container">
+            <div class="contact-header">
+                <p class="contact-subtitle">CONTACT US</p>
+                <h2 class="contact-title">Reach out for a new project or just say hello</h2>
+            </div>
+
+            <div class="contact-card">
+                <div class="contact-left">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                        <textarea id="message" name="message" placeholder="Your Message" required minlength="10"></textarea>
+                        <button type="submit" class="submit-btn">SUBMIT</button>
+                        <p id="form-status" style="color: green; display: none;">Message sent successfully!</p>
+                    </form>
+                </div>
+
+                <div class="contact-right">
+                    <h3>Contact Info</h3>
+                    <p><strong>Where to Find Us</strong><br>Tirana, Albania</p>
+                    <p><strong>Email Us At</strong><br>denis.krosniqi@fshnstudent.info</p>
+                    <p><strong>Call Us At</strong><br>Phone: (+355 68 214 2550)</p>
+
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <h5>About Us</h5>
+              <p>At ICTechX, we are a team of passionate creators and innovators dedicated to bringing bold ideas to life.</p>
+            </div>
+            <div class="col-md-4">
+              <h5>Quick Links</h5>
+              <ul class="list-unstyled">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="works.html">Works</a></li>
+                <li><a href="index.html#team">Team</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <ul class="list-unstyled social-links">
+                <li><a href="https://www.linkedin.com/in/arbi-gjonaj-450793264/" target="_blank">LinkedIn</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 text-center">
+              <p>&copy; 2025 ictechx All Rights Reserved.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js";
+      import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-database.js";
+
+      const firebaseConfig = {
+          apiKey: "AIzaSyAmv6pOGzt-e6Hzvs5ZI75GRB1IJ2wlqs0",
+          authDomain: "ictechx.firebaseapp.com",
+          databaseURL: "https://ictechx-default-rtdb.firebaseio.com",
+          projectId: "ictechx",
+          storageBucket: "ictechx.appspot.com",
+          messagingSenderId: "140441025951",
+          appId: "1:140441025951:web:51c64894f92c79f809d1aa",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const database = getDatabase(app);
+
+      document.getElementById("contactForm").addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value.trim();
+          const email = document.getElementById("email").value.trim();
+          const subject = document.getElementById("subject").value.trim();
+          const message = document.getElementById("message").value.trim();
+
+          if (!name || !email || !subject || !message) {
+              alert("Please fill in all fields.");
+              return;
+          }
+
+          const submitButton = document.querySelector(".submit-btn");
+          submitButton.disabled = true;
+          submitButton.innerText = "Sending...";
+
+          const contactRef = ref(database, "contacts");
+          const newContact = push(contactRef);
+
+          set(newContact, {
+              name,
+              email,
+              subject,
+              message,
+              timestamp: new Date().toISOString(),
+          })
+          .then(() => {
+              const formStatus = document.getElementById("form-status");
+              formStatus.style.display = "block";
+              formStatus.textContent = "Message sent successfully!";
+              document.getElementById("contactForm").reset();
+              setTimeout(() => {
+                  submitButton.disabled = false;
+                  submitButton.innerText = "SUBMIT";
+                  formStatus.style.display = "none";
+              }, 2000);
+          })
+          .catch((error) => {
+              alert("Error sending message: " + error.message);
+              submitButton.disabled = false;
+              submitButton.innerText = "SUBMIT";
+          });
+      });
+    </script>
+
+</body>
+</html>

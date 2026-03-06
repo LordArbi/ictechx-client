@@ -1,0 +1,53 @@
+ <section id="team" class="team-section">
+        <div class="container">
+            <h2 class="team-title">TEAM</h2>
+            <p class="team-description">
+              Meet the creative minds behind ICTechX! Our team is driven by passion, innovation, and expertise, working together to craft impactful digital experiences and influential brands. Each member brings unique skills and dedication to turning ideas into reality.
+            </p>
+            
+            <div class="team-grid">
+                <!-- Team Member 1 -->
+                <div class="team-card">
+                    <img src="assets/company-team-1.jpg" alt="Arbi Gjonaj">
+                    <div class="team-info">
+                        <h3>Arbi Gjonaj</h3>
+                        <p>Founder</p>
+                        <div class="team-social">
+                            <a href="https://www.linkedin.com/in/arbi-gjonaj-450793264/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+    
+    
+                <!-- Team Member 2 -->
+                <div class="team-card">
+                    <img src="assets/company-team-2.jpg" alt="Mirvjen Malo">
+                    <div class="team-info">
+                        <h3>Mirvjen Malo</h3>
+                        <p>COO</p>
+                        <div class="team-social">
+                          
+                            <a href="https://www.instagram.com/vjeniii?igsh=bDllNW1uNnRrNWwy&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                            
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Team Member 3 -->
+                <div class="team-card">
+                  <img src="assets/company-team-3.jpg" alt="William Anderson">
+                  <div class="team-info">
+                      <h3>Ana Gjonaj</h3>
+                      <p>Lead Designer</p>
+                      <div class="team-social">
+                        <a href="https://www.linkedin.com/in/ana-gjonaj-899b8831a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    
+                        
+                          <a href="https://www.instagram.com/anagjonaj1?igsh=bmlqcXZjdnFzOGFl&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+                          
+                      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+    </section>
