@@ -11,10 +11,8 @@
 </head>
 <body>
 
-<head>
-   
-    <script defer src="script.js"></script>
-    
+<head>  
+    <script defer src="script.js"></script>  
 </head>
 <body>
  
@@ -38,8 +36,7 @@
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                   
+                    <a href="#"><i class="fab fa-instagram"></i></a>                 
                 </div>
             </div>
         </nav>
@@ -111,52 +108,158 @@
 </section>
 
     <section id="team" class="team-section">
-        <div class="container">
-            <h2 class="team-title">TEAM</h2>
-            <p class="team-description">
-              Meet the creative minds behind ICTechX! Our team is driven by passion, innovation, and expertise, working together to craft impactful digital experiences and influential brands. Each member brings unique skills and dedication to turning ideas into reality.
-            </p>
+    <div class="container">
+        <h2 class="team-title">TEAM</h2>
+        <p class="team-description">
+            Meet the creative minds behind ICTechX! Our team is driven by passion, innovation, and expertise, working together to craft impactful digital experiences and influential brands.
+        </p>
+        
+        <div class="team-grid">
             
-            <div class="team-grid">
-                <!-- Team Member 1 -->
-
-                  <div class="team-card">
-                    <img src="assets/deniskrosniqi.jfif" alt="Denis Krosniqi">
-                    <div class="team-info">
-                        <h3>Denis Krosniqi</h3>
-                        <p>PM / Designer</p>
+            <!-- Arber Sinanaj -->
+            <div class="team-card arber-card">
+                <img src="assets/arbersinanaj.jfif" alt="Arber Sinanaj" class="arber-img">
+                <div class="team-info arber-info">
+                    <h3>Arber Sinanaj</h3>
+                    <p>PM / Front End</p>
+                    <p><strong style="color: #ffffff;">Specialization:</strong> React, JavaScript, HTML, CSS</p>
+                    <p><strong style="color: #ffffff;">Experience:</strong> 5 years</p>
+                    <div class="team-buttons">
+                        <button class="preview-btn arber-btn" data-member="arber">Preview</button>
+                        <button class="book-btn arber-btn">Book</button>
                     </div>
                 </div>
-
-                 <div class="team-card">
-                    <img src="assets/arbersinanaj.jfif" alt="Arber Sinanaj">
-                    <div class="team-info">
-                        <h3>Arber Sinanaj</h3>
-                        <p>Front End</p>
-                    </div>
-                </div>
-
-
-                <div class="team-card">
-                    <img src="assets/ergixhafa.jpg" alt="Ergi Xhafa">
-                    <div class="team-info">
-                        <h3>Ergi Xhafa</h3>
-                        <p>Back End</p>
-                    </div>
-                </div>
-
-    
-                <div class="team-card">
-                    <img src="assets/company-team-1.jpg" alt="Arbi Gjonaj">
-                    <div class="team-info">
-                        <h3>Arbi Gjonaj</h3>
-                        <p>Database</p>
-                    </div>
-                </div>
-    
             </div>
+
+            <!-- Denis Krosniqi -->
+            <div class="team-card denis-card">
+                <img src="assets/deniskrosniqi.jfif" alt="Denis Krosniqi" class="denis-img">
+                <div class="team-info denis-info">
+                    <h3>Denis Krosniqi</h3>
+                    <p>Designer</p>
+                    <p><strong style="color: #ffffff;">Specialization:</strong> Figma, Photoshop, Illustrator</p>
+                    <p><strong style="color: #ffffff;">Experience:</strong> 4 years</p>
+                    <div class="team-buttons">
+                        <button class="preview-btn denis-btn" data-member="denis">Preview</button>
+                        <button class="book-btn denis-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ergi Xhafa -->
+            <div class="team-card ergi-card">
+                <img src="assets/ergixhafa.jpg" alt="Ergi Xhafa" class="ergi-img">
+                <div class="team-info ergi-info">
+                    <h3>Ergi Xhafa</h3>
+                    <p>Back End</p>
+                    <p><strong style="color: #ffffff;">Specialization:</strong> Node.js, Python, SQL</p>
+                    <p><strong style="color: #ffffff;">Experience:</strong> 6 years</p>
+                    <div class="team-buttons">
+                        <button class="preview-btn ergi-btn" data-member="ergi">Preview</button>
+                        <button class="book-btn ergi-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arbi Gjonaj -->
+            <div class="team-card arbi-card">
+                <img src="assets/company-team-1.jpg" alt="Arbi Gjonaj" class="arbi-img">
+                <div class="team-info arbi-info">
+                    <h3>Arbi Gjonaj</h3>
+                    <p>Database</p>
+                    <p><strong style="color: #ffffff;">Specialization:</strong> MySQL, PostgreSQL, MongoDB</p>
+                    <p><strong style="color: #ffffff;">Experience:</strong> 5 years</p>
+                    <div class="team-buttons">
+                        <button class="preview-btn arbi-btn" data-member="arbi">Preview</button>
+                        <button class="book-btn arbi-btn">Book</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
+<!-- Popup Modal -->
+<div id="member-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); justify-content:center; align-items:center; z-index:1000;">
+    <div style="background:#111; color:#fff; padding:30px; border-radius:10px; max-width:500px; width:90%; position:relative;">
+        <span id="modal-close" style="position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px;">&times;</span>
+        <div id="modal-content">
+            <!-- Member info will be inserted here dynamically -->
+        </div>
+    </div>
+</div>
+<script>
+// ── BOOK BUTTONS ──────────────────────────────────────────────
+// Maps each card's data-member value to the correct member ID
+const bookBtns = document.querySelectorAll('.book-btn');
+bookBtns.forEach(btn => {
+    // Find the sibling preview-btn to read data-member
+    const previewBtn = btn.closest('.team-buttons').querySelector('.preview-btn');
+    const memberId   = previewBtn ? previewBtn.getAttribute('data-member') : null;
+ 
+    if (memberId) {
+        btn.addEventListener('click', () => {
+            window.open(`booking.html?member=${memberId}`, '_blank');
+        });
+    }
+});
+ 
+// ── PREVIEW POPUP (your existing modal logic, kept intact) ─────
+const memberData = {
+    arber: {
+        name: "Arber Sinanaj",
+        role: "PM / Front End",
+        specialization: "React, JavaScript, HTML, CSS",
+        experience: "5 years",
+        bio: "Arber leads front-end projects with a focus on performance and user experience. Passionate about building scalable web applications."
+    },
+    denis: {
+        name: "Denis Krosniqi",
+        role: "Designer",
+        specialization: "Figma, Photoshop, Illustrator",
+        experience: "4 years",
+        bio: "Denis is a creative designer crafting intuitive interfaces and memorable brand experiences."
+    },
+    ergi: {
+        name: "Ergi Xhafa",
+        role: "Back End",
+        specialization: "Node.js, Python, SQL",
+        experience: "6 years",
+        bio: "Ergi builds robust back-end systems and APIs that power high-traffic applications."
+    },
+    arbi: {
+        name: "Arbi Gjonaj",
+        role: "Database Engineer",
+        specialization: "MySQL, PostgreSQL, MongoDB",
+        experience: "5 years",
+        bio: "Arbi designs resilient schemas and optimises queries to keep data fast and reliable."
+    }
+};
+ 
+const modal        = document.getElementById('member-modal');
+const modalContent = document.getElementById('modal-content');
+const modalClose   = document.getElementById('modal-close');
+ 
+document.querySelectorAll('.preview-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-member');
+        const d  = memberData[id];
+        if (!d) return;
+ 
+        modalContent.innerHTML = `
+            <h2 style="font-size:20px;margin-bottom:6px;">${d.name}</h2>
+            <p style="color:#f04a3c;font-size:13px;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;">${d.role}</p>
+            <p><strong>Specialization:</strong> ${d.specialization}</p>
+            <p style="margin-top:8px;"><strong>Experience:</strong> ${d.experience}</p>
+            <p style="margin-top:12px;color:#aaa;font-size:14px;line-height:1.6;">${d.bio}</p>
+        `;
+        modal.style.display = 'flex';
+    });
+});
+ 
+modalClose.addEventListener('click', () => { modal.style.display = 'none'; });
+modal.addEventListener('click', e => { if (e.target === modal) modal.style.display = 'none'; });
+</script>
 
     <footer class="footer">
         <div class="container">
@@ -180,7 +283,7 @@
             <div class="col-md-4">
               <h5>Follow Us</h5>
               <ul class="list-unstyled social-links">
-                <li><a href="https://www.linkedin.com/in/arbi-gjonaj-450793264/" target="_blank">LinkedIn</a></li>
+                <li><a href="" target="_blank">LinkedIn</a></li>
               </ul>
             </div>
           </div>
